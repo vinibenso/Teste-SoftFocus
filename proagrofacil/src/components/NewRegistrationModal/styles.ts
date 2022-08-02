@@ -1,6 +1,6 @@
-import styled from "styled-components";
-
-export const Container = styled.div`
+import styled from 'styled-components'
+ 
+export const Container = styled.form`
 
 display: flex;
 align-items: center;
@@ -10,10 +10,27 @@ flex-direction: column;
 h1{
   color: var(--text-title);
   font-size: 16px;
+  
+
+ 
+}
+input {
+  color: var(--text-area);
+  padding: 0 1rem;
+  border: 1px solid var(--text-area);
+  border-radius: 0.25rem;
+  width: 30rem;
+  height: 2rem;
+  margin-bottom: 1.5rem;
+  
 }
 
+select {
+  width: 30rem;
+  margin-bottom: 2rem;
+}
 
-button {
+button[type="submit"] {
   width: 30rem;
   padding: 0 1.5rem;
   height: 3rem;
@@ -30,8 +47,6 @@ button {
     opacity: 0.8;
     
   }
+  
 }
-
-
-
 `

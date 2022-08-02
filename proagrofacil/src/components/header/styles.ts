@@ -16,7 +16,7 @@ align-items: center;
 justify-content: space-between;
 
 h1 {
-  color: var
+  color: white;
 }
 
 img {
