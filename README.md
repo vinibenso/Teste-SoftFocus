@@ -2,14 +2,13 @@
 
 Ola Bem vindo ao Proagro Fácil. Caso surja alguam duvida ao rodar o app favor entrar em contato pedo discord: VINICIUS#8475 ou pelo whatsapp: 46 99924-5747
 
-Instalar as dependencias:
+Requesitos para rodar:
 
-yarn init -y
-yarn add react  react-dom
+Node instalado e yarn tambem.
 
-Esse app utiliza css in js, favor instalar a biblioteca:
-yarn add styled-components
 
-Essa app utiliza um servidor fake: yarn add miragejs 
+Iniciar o yarn:
+yarn install
 
-Esse app utiliza o axios para as requisiçoes http: yarn add axios
+Rodar:
+yarn start
