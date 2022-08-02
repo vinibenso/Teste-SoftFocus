@@ -7,7 +7,7 @@ import { Table } from "./components/reportTable";
 import { NewRegistrationModal } from "./components/NewRegistrationModal";
 import { NewSearchModal } from "./components/NewSearchModal";
 
-
+Modal.setAppElement('#root');
 
 export function App() {
 

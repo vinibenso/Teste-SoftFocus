@@ -11,7 +11,7 @@ interface TableProps {
 export function Table({onOpenNewUserModal, onOpenSearchModal}: TableProps) {
 
 useEffect(() => {
-  api.get('/tables')
+  api.get('/registration')
   .then(response => console.log(response.data))
 }, []);
 

@@ -1,6 +1,7 @@
 import Modal from 'react-modal';
 import { Container } from './styles';
 import closeImg from '../../assets/close.svg'
+import { FormEvent } from 'react';
 
 interface NewSearchModalProps {
   isOpen: boolean;
@@ -8,15 +9,23 @@ interface NewSearchModalProps {
 }
 
 export function NewSearchModal({ isOpen, onRequestClose }: NewSearchModalProps) {
+
+
+  function handleCreateSearch(event: FormEvent) {
+    event.preventDefault();
+
+  }
   return (
+    
     <Modal
       isOpen={isOpen}
       onRequestClose={onRequestClose}
       overlayClassName={"modal-styles-search-overlay"}
       className="modal-styles-search-content"
     >
+   
      
-      <Container>
+      <Container onSubmit={handleCreateSearch}>
       <button 
       type="button" 
       onClick={onRequestClose}
@@ -28,7 +37,7 @@ export function NewSearchModal({ isOpen, onRequestClose }: NewSearchModalProps) 
         <h1>CPF do produtor </h1>
         <input placeholder="Digite o CPF do produtor" />
 
-        <button>
+        <button type="submit">
           Buscar
         </button>
 

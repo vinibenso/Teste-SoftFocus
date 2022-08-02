@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import Modal from 'react-modal'
 import { Container } from './styles';
 import closeImg from '../../assets/close.svg';
+import { api } from '../../services/api';
 interface NewRegistrationModalProps {
   isOpen: boolean;
   onRequestClose: () => void;
@@ -18,7 +19,21 @@ export function NewRegistrationModal({ isOpen, onRequestClose }: NewRegistration
   const [eventDescription, setEventDescription] = useState('');
 
 
-  function handleCreateNewRegistration() {
+
+  function handleCreateNewRegistration(event: FormEvent) {
+    event.preventDefault();
+
+  const data = {
+    name,
+    email,
+    cpf,
+    locale,
+    type,
+    date,
+    eventDescription,
+  };
+
+  api.post('/registration', data)
 
   }
 

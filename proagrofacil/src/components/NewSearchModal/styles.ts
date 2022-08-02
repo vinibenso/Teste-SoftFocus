@@ -31,7 +31,7 @@ select {
   margin-bottom: 2rem;
 }
 
-button[type-="submit"] {
+button[type="submit"] {
   width: 30rem;
   padding: 0 1.5rem;
   height: 3rem;

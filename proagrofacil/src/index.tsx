@@ -7,7 +7,7 @@ createServer({
   routes() {
     this.namespace = 'api';
 
-    this.get('/tables', () => {
+    this.get('/registration', () => {
       return [
         {
         id: 1,
@@ -21,6 +21,13 @@ createServer({
         }
       ]
     })
+    
+    this.post('/registration', (schema, request) => {
+      const data = JSON.parse(request.requestBody)
+
+      return data;
+    })
+
   }
 })
 
