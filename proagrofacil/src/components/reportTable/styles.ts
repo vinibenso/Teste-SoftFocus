@@ -33,6 +33,29 @@ button {
     
   }
 }
+  table {
+    width: 90%;
+    border-spacing: 0 0.5rem;
+    th {
+      color: gray;
+      text-align: left;
+      line-height: 1.5;
+      padding: 0 1rem;
+    }
+
+    td {
+      padding: 1rem;
+      border: 0;
+      color: #7E8691;
+      background: #f1f5f0;
+      margin: 
+      
+      
+
+    }
+    
+  }
+
 
 
 

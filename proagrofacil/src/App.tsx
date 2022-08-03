@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Table } from "./components/reportTable";
 import { NewRegistrationModal } from "./components/NewRegistrationModal";
 import { NewSearchModal } from "./components/NewSearchModal";
+import { UsersProvider } from "./UserContext";
 
 Modal.setAppElement('#root');
 
@@ -31,8 +32,9 @@ export function App() {
     setIsSearchOpen(false);
   }
 
+
   return (
-    <>
+    <UsersProvider>
       <Header />
       
       <Table 
@@ -53,7 +55,7 @@ export function App() {
       
 
       <GlobalStyle />
-    </>
+      </UsersProvider>
   );
 }
 

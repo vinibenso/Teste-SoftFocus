@@ -1,7 +1,8 @@
 import Modal from 'react-modal';
 import { Container } from './styles';
 import closeImg from '../../assets/close.svg'
-import { FormEvent } from 'react';
+import { FormEvent, useContext } from 'react';
+import {  UsersContext } from '../../UserContext';
 
 interface NewSearchModalProps {
   isOpen: boolean;
@@ -10,7 +11,8 @@ interface NewSearchModalProps {
 
 export function NewSearchModal({ isOpen, onRequestClose }: NewSearchModalProps) {
 
-
+  const {users} = useContext(UsersContext);
+  
   function handleCreateSearch(event: FormEvent) {
     event.preventDefault();
 

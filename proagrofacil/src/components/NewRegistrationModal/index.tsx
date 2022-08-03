@@ -1,8 +1,13 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useState, useContext } from 'react';
 import Modal from 'react-modal'
+
+import { UsersContext } from '../../UserContext';
+
 import { Container } from './styles';
+
 import closeImg from '../../assets/close.svg';
-import { api } from '../../services/api';
+
+
 interface NewRegistrationModalProps {
   isOpen: boolean;
   onRequestClose: () => void;
@@ -10,9 +15,11 @@ interface NewRegistrationModalProps {
 
 export function NewRegistrationModal({ isOpen, onRequestClose }: NewRegistrationModalProps) {
 
+  const { createUser } = useContext(UsersContext)
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [cpf, setCpf] = useState(0);
+  const [cpf, setCpf] = useState('');
   const [locale, setLocale] = useState('');
   const [type, setType] = useState('');
   const [date, setDate] = useState(new Date());
@@ -20,21 +27,28 @@ export function NewRegistrationModal({ isOpen, onRequestClose }: NewRegistration
 
 
 
-  function handleCreateNewRegistration(event: FormEvent) {
+  async function handleCreateNewRegistration(event: FormEvent) {
     event.preventDefault();
 
-  const data = {
-    name,
-    email,
-    cpf,
-    locale,
-    type,
-    date,
-    eventDescription,
-  };
+    await createUser({
+      name,
+      email,
+      cpf,
+      locale,
+      type,
+      date,
+      eventDescription
+    })
+      setName('');
+      setEmail('');
+      setCpf('');
+      setLocale('');
+      setType('');
+      setDate(new Date());
+      setEventDescription('');
 
-  api.post('/registration', data)
 
+    onRequestClose()
   }
 
   return (
@@ -72,7 +86,7 @@ export function NewRegistrationModal({ isOpen, onRequestClose }: NewRegistration
         <input
           placeholder="Cpf do produtor"
           value={cpf}
-          onChange={event => setCpf(Number(event.target.value))}
+          onChange={event => setCpf(event.target.value)}
         />
 
         <h1>Localização</h1>
@@ -108,12 +122,12 @@ export function NewRegistrationModal({ isOpen, onRequestClose }: NewRegistration
           value={eventDescription}
           onChange={event => setEventDescription(event.target.value)}
         >
-          <option value="valor1" >---------</option>
-          <option value="valor2">CHUVA EXCESSIVA</option>
-          <option value="valor3">GEADA</option>
-          <option value="valor4">SECA</option>
-          <option value="valor5">VENDAVAL</option>
-          <option value="valor6">RAIO</option>
+          <option value="Não prenchido" >---------</option>
+          <option value="Chuva Excessiva">CHUVA EXCESSIVA</option>
+          <option value="Geada">GEADA</option>
+          <option value="Seca">SECA</option>
+          <option value="Vendaval">VENDAVAL</option>
+          <option value="Raio">RAIO</option>
 
 
 
