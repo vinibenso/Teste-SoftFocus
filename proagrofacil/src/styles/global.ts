@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
 
   :root {
-    --background: #f0f2f5;
+    --background:#D1CACE;
     --green: #228B22;
 
     --text-title: #363f5f;
@@ -78,6 +78,7 @@ align-items: center;
 flex-direction: column;
 
 }
+
 .react-modal-close{
   position: absolute;
   right: 1.5rem;

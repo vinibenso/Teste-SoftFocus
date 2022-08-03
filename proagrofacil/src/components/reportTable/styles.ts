@@ -5,6 +5,7 @@ export const Container = styled.div`
 display: flex;
 align-items: center;
 flex-direction: column;
+margin-top: 2REM;
 
 
 h1{
@@ -24,6 +25,7 @@ button {
   font-size: 1.2rem;
   color: white;
   margin-top: 10px;
+  margin-bottom: 1REM;
   transition: opacity 0.2s;
 
   :hover {

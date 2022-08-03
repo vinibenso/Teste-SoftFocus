@@ -5,7 +5,7 @@ export const Container = styled.form`
 display: flex;
 align-items: center;
 flex-direction: column;
-background-color: #f0f2f5;
+background: #D1CACE;
 padding: 4rem 3rem;
 
 
@@ -19,11 +19,12 @@ h1{
 }
 input {
   color: var(--text-area);
+  padding: 0 1rem;
   border: 1px solid var(--text-area);
+  border-radius: 0.25rem;
   width: 30rem;
   height: 2rem;
   margin-bottom: 1.5rem;
-  
 }
 
 select {
