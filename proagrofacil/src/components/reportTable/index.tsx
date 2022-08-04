@@ -30,6 +30,7 @@ export function Table({ onOpenNewUserModal, onOpenSearchModal }: TableProps) {
             <th>E-mail</th>
             <th>Cpf</th>
             <th>Localização</th>
+            <th></th>
             <th>Tipo da Lavoura</th>
             <th>Data da Colheita</th>
             <th>Evento Ocorrido</th>
@@ -43,7 +44,8 @@ export function Table({ onOpenNewUserModal, onOpenSearchModal }: TableProps) {
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>{user.cpf}</td>
-                <td>{user.locale}</td>
+                <td>{user.latitude}</td>
+                <td>{user.longitude}</td>
                 <td>{user.type}</td>
                 <td>{new Intl.DateTimeFormat('pt-BR').format(new Date(user.date))}</td>
                 <td>{user.eventDescription}</td>

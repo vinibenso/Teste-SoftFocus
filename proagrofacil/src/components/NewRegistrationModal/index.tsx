@@ -1,10 +1,7 @@
 import { FormEvent, useState, useContext } from 'react';
 import Modal from 'react-modal'
-
 import { UsersContext } from '../../UserContext';
-
 import { Container } from './styles';
-
 import closeImg from '../../assets/close.svg';
 
 
@@ -20,7 +17,8 @@ export function NewRegistrationModal({ isOpen, onRequestClose }: NewRegistration
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [cpf, setCpf] = useState('');
-  const [locale, setLocale] = useState('');
+  const [latitude, setLatitude] = useState('');
+  const [longitude, setLongitude] = useState('');
   const [type, setType] = useState('');
   const [date, setDate] = useState(new Date());
   const [eventDescription, setEventDescription] = useState('');
@@ -34,7 +32,8 @@ export function NewRegistrationModal({ isOpen, onRequestClose }: NewRegistration
       name,
       email,
       cpf,
-      locale,
+      latitude,
+      longitude,
       type,
       date,
       eventDescription
@@ -42,7 +41,8 @@ export function NewRegistrationModal({ isOpen, onRequestClose }: NewRegistration
       setName('');
       setEmail('');
       setCpf('');
-      setLocale('');
+      setLatitude('');
+      setLongitude('');
       setType('');
       setDate(new Date());
       setEventDescription('');
@@ -91,9 +91,14 @@ export function NewRegistrationModal({ isOpen, onRequestClose }: NewRegistration
 
         <h1>Localização</h1>
         <input
-          placeholder="Localização do produtor"
-          value={locale}
-          onChange={event => setLocale(event.target.value)}
+          placeholder="Latitude"
+          value={latitude}
+          onChange={event => setLatitude(event.target.value)}
+        />
+         <input
+          placeholder="Longitude"
+          value={longitude}
+          onChange={event => setLongitude(event.target.value)}
         />
 
         <h1>Tipo da Lavoura</h1>
